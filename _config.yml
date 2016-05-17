@@ -5,8 +5,8 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 highlighter: rouge
 markdown: redcarpet
-disqus: dbyll
-google_analytics: dbyll
+disqus: kimbeomsu
+google_analytics: UA-77842525-1
 title:  Beomsu Kim's Blog
 
 defaults:
@@ -32,7 +32,7 @@ categories_path: categories.html
 tags_path: tags.html
 
 # set it as url of an image
-sidebar_background_image: pictures/sidebar_background.jpg
+sidebar_background_image: http://shuuki4.github.io/pictures/sidebar_background.jpg
 
 BASE_PATH:
 
