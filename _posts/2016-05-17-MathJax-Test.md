@@ -3,6 +3,7 @@ layout: post
 title: MathJax Test
 categories : [test]
 tags : [mathjax, test]
+comments : true
 ---
 
 # MathJax Test
