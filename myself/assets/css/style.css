@@ -45,6 +45,20 @@ body, html{
     overflow-x:hidden;
 }
 
+/* Blank blocks 
+---------------------------------------------------------*/
+.blank_20px {
+	margin-bottom : 20px;
+}
+
+.blank_15px {
+	margin-bottom : 15px;
+}
+
+.blank_10px {
+	margin-bottom : 10px;
+}
+
 /* Link style
 ---------------------------------------------------------*/
 a {
@@ -998,7 +1012,8 @@ Resume Timeline
 }
 .progress {
     height: 10px;
-    margin-bottom: 40px;
+	margin-top : 10px;
+    margin-bottom: 10px;
     background-color: #3a4149;
     border-radius: 3px;
     box-shadow: none;
@@ -1023,7 +1038,8 @@ Resume Timeline
 
 
 .skill-chart h3 {
-    margin-top: 20px;
+    margin-top: 10px;
+	margin-bottom : 10px;
 }
 
 .our-progress{
