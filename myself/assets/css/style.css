@@ -1121,6 +1121,17 @@ Resume Timeline
 	font-size : 15px;
 	text-align : center;
 }
+
+.portfolio-item a:link {
+	color:#FFF;
+	text-decoration:none;
+}
+
+.portfolio-item a:visited {
+	color:#FFF;
+	text-decoration:none;
+}
+
 .portfolio-bg{
    background: #fff;
    padding: 5px;
