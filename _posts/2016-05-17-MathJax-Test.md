@@ -1,3 +1,9 @@
+---
+layout: post
+title: MathJax Test 2
+categories : [test]
+tags : [mathjax, test]
+---
 
 # MathJax Test
 
