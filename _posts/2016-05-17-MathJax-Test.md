@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MathJax Test 2
+title: MathJax Test
 categories : [test]
 tags : [mathjax, test]
 ---
