@@ -2,10 +2,6 @@
 
 body{
 	color: #2c3e50;
-	padding : 0;
-	margin : 0;
-	overflow : hidden;
-	background-color : transparent;
 }
 
 .sidebar {
@@ -95,6 +91,10 @@ article .share .gplus:hover {
     .page-header{
         margin-right: 70px;
     }
+}
+
+.page-content {
+	background-color : transparent;
 }
 
 article{
