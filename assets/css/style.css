@@ -28,6 +28,10 @@ body{
 	color: #fff;
 }
 
+.center{
+	text-align : center;
+}
+
 a.nav-link {
 	padding-bottom: 5px;
 	padding-top: 7px;
