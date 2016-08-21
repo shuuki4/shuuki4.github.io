@@ -32,6 +32,10 @@ body{
 	text-align : center;
 }
 
+img + em {
+	
+}
+
 a.nav-link {
 	padding-bottom: 5px;
 	padding-top: 7px;
