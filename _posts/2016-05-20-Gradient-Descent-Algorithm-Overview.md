@@ -4,10 +4,8 @@ title: Gradient Descent Optimization Algorithms 정리
 categories : [Deep Learning]
 tags : [Deep Learning]
 use_math : true
-shorttinfo : true
+shortinfo : true
 ---
-
-# Gradient Descent Optimization Algorithms 정리
 
 Neural network의 weight을 조절하는 과정에는 보통 **'Gradient Descent'** 라는 방법을 사용한다. 이는 네트워크의 parameter들을 $\theta$라고 했을 때, 네트워크에서 내놓는 결과값과 실제 결과값 사이의 차이를 정의하는 함수 Loss function $J(\theta)$의 값을 최소화하기 위해 기울기(gradient) $\nabla_{\theta} J(\theta)$를 이용하는 방법이다. Gradient Descent에서는 $ \theta $ 에 대해 gradient의 반대 방향으로 일정 크기만큼 이동해내는 것을 반복하여 Loss function $J(\theta)$ 의 값을 최소화하는 $ \theta $ 의 값을 찾는다. 한 iteration에서의 변화 식은 다음과 같다.
 
@@ -18,7 +16,6 @@ $$ \theta = \theta - \eta \nabla_{\theta} J(\theta)$$
 
 보통 Neural Network를 트레이닝할 때는 이 SGD를 이용한다. 그러나 단순한 SGD를 이용하여 네트워크를 학습시키는 것에는 한계가 있다. 결론부터 살펴보기 위해, 다음과 같은 그림들을 살펴보자.
 
-<center>
 ![Long Valley](http://i.imgur.com/2dKCQHh.gif?1)
 Gradient Descent Optimization Algorithms at Long Valley
 
@@ -27,7 +24,6 @@ Gradient Descent Optimization Algorithms at Beale's Function
 
 ![Saddle Point](http://i.imgur.com/NKsFHJb.gif?1)
 Gradient Descent Optimization Algorithms at Saddle Point
-</center>
 
 위의 그림들은 각각 SGD 및 SGD의 변형 알고리즘들이 최적값을 찾는 과정을 시각화한 것이다. 빨간색의 SGD가 우리가 알고 있는 Naive Stochastic Gradient Descent 알고리즘이고, Momentum, NAG, Adagrad, AdaDelta, RMSprop 등은 SGD의 변형이다. 보다시피 모든 경우에서 SGD는 다른 알고리즘들에 비해 성능이 월등하게 낮다. 다른 알고리즘들 보다 이동속도가 현저하게 느릴뿐만 아니라, 방향을 제대로 잡지 못하고 이상한 곳에서 수렴하여 이동하지 못하는 모습도 관찰할 수 있다. 즉 단순한 SGD를 이용하여 네트워크를 학습시킬 경우 네트워크가 상대적으로 좋은 결과를 얻지 못할 것이라고 예측할 수 있다. 그렇다면 실제로는 어떤 방법들을 이용해야 하는 것인가? 이 글에서는 Neural Network를 학습시킬 때 실제로 많이 사용하는 다양한 SGD의 변형 알고리즘들을 간략하게 살펴보겠다. 내용과 그림의 상당 부분은 [Sebastian Ruder의 글](http://sebastianruder.com/optimizing-gradient-descent/) 에서 차용했다.
 
@@ -42,22 +38,16 @@ $$ v_t = \eta \nabla_{\theta}J(\theta)_t + \gamma \eta \nabla_{\theta}J(\theta)_
 
 Momentum 방식은 SGD가 Oscilation 현상을 겪을 때 더욱 빛을 발한다. 다음과 같이 SGD가 Oscilation을 겪고 있는 상황을 살펴보자.
 
-<center>
 ![Oscilation](http://sebastianruder.com/content/images/2015/12/without_momentum.gif)
-</center>
 
 현재 SGD는 중앙의 최적점으로 이동해야하는 상황인데, 한번의 step에서 움직일 수 있는 step size는 한계가 있으므로 이러한 oscilation 현상이 일어날 때는 좌우로 계속 진동하면서 이동에 난항을 겪게 된다.
 
-<center>
 ![Momentum Oscilation](http://sebastianruder.com/content/images/2015/12/with_momentum.gif)
-</center>
 
 그러나 Momentum 방식을 사용할 경우 다음과 같이 자주 이동하는 방향에 관성이 걸리게 되고, 진동을 하더라도 중앙으로 가는 방향에 힘을 얻기 때문에 SGD에 비해 상대적으로 빠르게 이동할 수 있다.
 
-<center>
 ![Local Minimum Avoid](http://www.yaldex.com/game-development/FILES/17fig09.gif)
 Avoiding Local Minima. Picture from http://www.yaldex.com.
-</center>
 
 또한 Momentum 방식을 이용할 경우 위의 그림과 같이 local minima를 빠져나오는 효과가 있을 것이라고도 기대할 수 있다. 기존의 SGD를 이용할 경우 좌측의 local minima에 빠지면 gradient가 0이 되어 이동할 수가 없지만, momentum 방식의 경우 기존에 이동했던 방향에 관성이 있어 이 local minima를 빠져나오고 더 좋은 minima로 이동할 것을 기대할 수 있게 된다.
 반면 momentum 방식을 이용할 경우 기존의 변수들 $\theta$ 외에도 과거에 이동했던 양을 변수별로 저장해야하므로 변수에 대한 메모리가 기존의 두 배로 필요하게 된다.
@@ -65,10 +55,8 @@ Avoiding Local Minima. Picture from http://www.yaldex.com.
 ## Nesterov Accelerated Gradient (NAG)
 Nesterov Accelerated Gradient(NAG)는 Momentum 방식을 기초로 한 방식이지만, Gradient를 계산하는 방식이 살짝 다르다. 빠른 이해를 위해 다음 그림을 먼저 살펴보자.
 
-<center>
 ![Diff. between Momentum / NAG](http://cs231n.github.io/assets/nn3/nesterov.jpeg)
 Difference between Momentum and NAG. Picture from CS231.
-</center>
 
 Momentum 방식에서는 이동 벡터 $v_t$ 를 계산할 때 현재 위치에서의 gradient와 momentum step을 독립적으로 계산하고 합친다. 반면, NAG에서는 momentum step을 먼저 고려하여, momentum step을 먼저 이동했다고 생각한 후 그 자리에서의 gradient를 구해서 gradient step을 이동한다. 이를 수식으로 나타내면 다음과 같다.
 $$ v_t = \gamma v_{t-1}+ \eta\nabla_{\theta}J(\theta-\gamma v_{t-1}) $$
