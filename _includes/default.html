@@ -32,6 +32,11 @@
 
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.BASE_PATH }}/feed.xml">
 	
+	<!-- Mathjax -->
+	{% if page.use_math %}
+      {% include mathjax_support %}
+    {% endif %}
+	
 </head>
 
 <body>
