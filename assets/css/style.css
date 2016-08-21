@@ -32,8 +32,8 @@ body{
 	text-align : center;
 }
 
-img + em {
-	
+figure.image {
+	text-align : center;
 }
 
 a.nav-link {
