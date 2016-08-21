@@ -2,7 +2,7 @@
 layout: post
 title: Gradient Descent Optimization Algorithms 정리
 categories : [Deep Learning]
-tags : [Deep Learning]
+tags : [Deep Learning, Gradient Descent, Optimization]
 use_math : true
 shortinfo : 주로 사용되는 SGD 알고리즘의 변형 알고리즘들에 대해 정리해 보았습니다.
 ---
