@@ -4,6 +4,10 @@ body{
 	color: #2c3e50;
 }
 
+h2 {
+	padding-top : 10px;
+}
+
 .sidebar {
 	position: fixed;
 	left : 0px;
