@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why Should I Trust You?" Explaining the Predictions of Any Classifier 논문 정리
+title: Why Should I Trust You? Explaining the Predictions of Any Classifier 논문 정리
 categories : [Deep Learning]
 tags : [Deep Learning, Machine Learning]
 use_math : true
