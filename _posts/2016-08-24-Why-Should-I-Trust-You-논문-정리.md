@@ -59,7 +59,7 @@ $$ \xi(x) = {argmin}_{g \in G} L(f, g, \pi) + \Omega(g)$$
 - 사용자는 B개의 instance 설명 결과를 보고 이 model의 행동 방식을 유추할 수 있을 것
 
 ## 정리
-- LIME은 결국 모델의 복잡한 decision bound를 설명하기 보다는 현재 보는 instance의 local한 부분의 decision bound를 설명하는(근사하는) interpretable model을 찾음으로서 머신러닝 사용자에게 믿음과 응용력을 주는 연ㄱ
+- LIME은 결국 모델의 복잡한 decision bound를 설명하기 보다는 현재 보는 instance의 local한 부분의 decision bound를 설명하는(근사하는) interpretable model을 찾음으로서 머신러닝 사용자에게 모델/해석에 대한 믿음을 주려는 연구.
 - Model-agnostic을 지향하는 연구인 이상 이렇게 결과값을 가지고 거꾸로 유추하는 방식밖에 사용할 수 없다고는 생각되지만, 아무래도 이런 방식을 택하다보니 느릴 수밖에 없는 것 같다
 	- Inception Net의 한 instance를 설명하는 데에 10분이 걸린다고 함
 - 또 한 가지 단점은 원래 모델에 사용하는 input <-> interpretable feature의 가역적인 변환이 가능한 경우에만 사용할 수 있다는 것
