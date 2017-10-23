@@ -280,7 +280,7 @@ hr {
 
 /* LIST STYLE
 -------------------------------------------------- */
-ul, ol {
+ul:not(.original), ol {
     margin     : 0;
     padding    : 0;
     list-style : none
@@ -386,13 +386,14 @@ ul.list-check li::before {
 	color: #68c3a3;
 }
 .intro p{
+    font-size: 20px;
 	color: #f7f7f7;
 	margin-bottom: 40px;
 }
 
 .intro-sub {
 	color: #fff;
-	font-size: 24px;
+	font-size: 32px;
 	line-height: 32px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -567,20 +568,11 @@ SOCIAL ICON
 
 /* === About Section === */
 .short-info {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
-.short-info h3 {
+.short-info h2 {
     margin-bottom: 30px;
-}
-
-.short-info ul {
-    margin-top: 10px;
-    display:inline-block;
-}
-.short-info ul li {
-    width: 50%;
-    float: left;
 }
 
 .my-signature{
@@ -593,7 +585,7 @@ SOCIAL ICON
 
 /*download-button*/
 .download-button a {
-    margin-right: 20px;
+    margin-right: 20px;m
     color: #fff;
 }
 .download-button a i {
@@ -626,7 +618,7 @@ SOCIAL ICON
 
 .myphoto img{
     position: relative;
-    z-index: -1;
+    z-index: 0;
 }
 
 .biography ul{
@@ -1698,6 +1690,10 @@ Icon for all respective meta
 }
 
 /* === About Section === */
+.about-section {
+    background-color: #f7f7f7;
+}
+
 .short-info {
     margin-bottom: 40px;
 }
