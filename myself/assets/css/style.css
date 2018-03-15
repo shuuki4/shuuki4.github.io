@@ -691,9 +691,6 @@ Resume Timeline
 .resume-section > div > div{
     margin-bottom: 60px;
 }
-.resume-section > div > div:nth-of-type(2){
-    margin-bottom: 0;
-}
 .resume-title{
     margin-bottom: 30px;
 }
